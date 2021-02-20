@@ -2,7 +2,7 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org/">
 
-<header class="main-header" th:fragment="headerTitle">
+<div th:fragment="headerTitle">
     <nav class="navbar">
         <div class="navbar_logo">
             <i class="fas fa-baby"></i>
@@ -11,7 +11,7 @@
         <ul class="navbar_menu">
             <li><a href="Language">언어게시판</a></li>
             <li><a href="Eror">에러 모음집</a></li>
-            <li><a href="Best">Best 게시글</a></li>
+            <li><a href="http://localhost:8080/main/list">Best 게시글</a></li>
             <li><a href="Career">취업 정보</a></li>
             <li><a href="Regular">연구/회사원</a></li>
             <li><a href="Question">Q&A</a></li>
@@ -25,7 +25,10 @@
             <i class="fas fa-list"></i>
         </a>
     </nav>
+    <ul class="skipnavi">
+        <li><a href="#container">본문내용</a></li>
+    </ul>
 
-</header>
+</div>
 
 </html>

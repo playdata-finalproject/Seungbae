@@ -6,14 +6,13 @@
 <!-- head Start-->
 <div th:replace="fragment/head :: head"></div>
 <!-- head End-->
+
+
 <body>
 <!--header Start-->
-<div th:replace="fragment/headerTitle :: headerTitle"></div>
+<div th:replace="fragment/headerTitle ::headerTitle"></div>
 <!--header End-->
 
-<ul class="skipnavi">
-    <li><a href="#container">본문내용</a></li>
-</ul>
 <!-- wrap -->
 <div id="wrap">
     <div id="container">
@@ -70,45 +69,19 @@
 
             </div>
             <!-- //login-wrap -->
+
         </div>
         <!-- //bodytext_area -->
     </div>
-        <footer>
-            <div class="foot_area box_inner">
-                <ul class="foot_list clear">
-                    <li><a href="javascript:;">이용약관</a></li>
-                    <li><a href="javascript:;">개인정보취급방침</a></li>
-                </ul>
-                <h2>코린이 대피소</h2>
-                <p class="addr">서울특별시 서초구 효령료 335, 1층 플레이데이터 <span class="gubun">/</span>
-                    <span class="br_line">대표전화 <span class="space0">02-1234-5678</span> <span class="gubun">/</span>
-					<span class="br_line">E-mail : <span class="space0"> corin@corinshelter.com</span></span>
-				</span>
-                </p>
-                <p class="copy box_inner">Copyright(c) CorinShelter all right reserved</p>
-                <ul class="snslink clear">
-                    <li><a href="javascript:;">blog</a></li>
-                    <li><a href="javascript:;">facebook</a></li>
-                    <li><a href="javascript:;">instargram</a></li>
-                </ul>
-            </div>
-        </footer>
-    </div>
+    <div th:replace="fragment/footer"/>
 </div>
-    <!-- //wrap -->
+<!-- //wrap -->
 
-    <h2 class="hdd">빠른 링크 : 전화 문의,카카오톡,오시는 길,꼭대기로</h2>
-    <div class="quick_area">
-        <ul class="quick_list">
-            <li><a href="tel:010-7184-4403"><h3>스터디 신청</h3></a></li>
-            <li><a href="javascript:;"><h3>멘토링 <em>상담</em></h3><p>1:1상담</p></a></li>
-            <li><a href="javascript:;"><h3 class="to_contact">이력서 작성</h3></a></li>
-        </ul>
-        <p class="to_top"><a href="#layout0" class="s_point">TOP</a></p>
-    </div>
+<div th:replace="fragment/sideMenu"/>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+
 </body>
 
 </html>
