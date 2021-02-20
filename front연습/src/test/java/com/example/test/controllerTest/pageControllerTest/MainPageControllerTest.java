@@ -13,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @AutoConfigureMockMvc
 public class MainPageControllerTest extends TestApplicationTests {
+
     @Autowired
     private MockMvc mockMvc;
 
