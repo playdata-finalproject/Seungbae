@@ -9,3 +9,5 @@
 [MockMvc Test 간단한 설명](https://jsb-diary0011.tistory.com/41)
 
 [AWS로 mysql 연동하는 방법](https://jsb-diary0011.tistory.com/17)
+
+[mysql ERD 방법](https://jsb-diary0011.tistory.com/42)
