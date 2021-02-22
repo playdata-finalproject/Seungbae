@@ -20,8 +20,10 @@ public class AdminUserRepositoryTest extends ShelterApplicationTests {
     @Test
     public void create(){
         AdminUser adminUser = new AdminUser();
-        adminUser.setName("홍길동");
-        adminUser.setRegisteredAt(LocalDateTime.now());
+        adminUser.setName("길");
+        adminUser.setCreatedAt(LocalDateTime.now());
+        adminUser.setUserId("aaa123");
+        adminUser.setPassword("1234");
 
         AdminUser newadminuser = adminUserRepository.save(adminUser);
         Assertions.assertNotNull(newadminuser);
@@ -35,7 +37,7 @@ public class AdminUserRepositoryTest extends ShelterApplicationTests {
 
         adminUser.ifPresent(selectAdminUser->{
             System.out.println("name : "+selectAdminUser.getName());
-            System.out.println("create : "+selectAdminUser.getRegisteredAt());
+            System.out.println("create : "+selectAdminUser.getCreatedAt());
         });
     }
 
@@ -46,7 +48,8 @@ public class AdminUserRepositoryTest extends ShelterApplicationTests {
 
         adminUser.ifPresent(selectAdminUser->{
             selectAdminUser.setName("이순신");
-            selectAdminUser.setRegisteredAt(LocalDateTime.now());
+            selectAdminUser.setUpdatedAt(LocalDateTime.now());
+            selectAdminUser.setUpdatedBy("이름 수정");
             adminUserRepository.save(selectAdminUser);
         });
     }

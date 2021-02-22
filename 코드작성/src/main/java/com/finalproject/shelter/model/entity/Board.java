@@ -1,39 +1,31 @@
 package com.finalproject.shelter.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class AdminUser {
+@ToString(exclude = "answerList")
+public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String userId;
-
-    private String password;
+    private String title;
 
     private String name;
 
-    private LocalDateTime lastLoginAt;
-
-    private int loginFailCount; // integer의 용량 이 int보다 큼 바꿀라면 나중에 바꾸자
+    private String contents;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -45,4 +37,10 @@ public class AdminUser {
 
     @LastModifiedBy
     private String updatedBy;
+
+    @ManyToOne
+    private Category category;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "board")
+    private List<Answer> answerList;
 }

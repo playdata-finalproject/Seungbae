@@ -8,32 +8,21 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class AdminUser {
+public class Answer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String userId;
-
-    private String password;
-
-    private String name;
-
-    private LocalDateTime lastLoginAt;
-
-    private int loginFailCount; // integer의 용량 이 int보다 큼 바꿀라면 나중에 바꾸자
+    private String answerText;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -45,4 +34,10 @@ public class AdminUser {
 
     @LastModifiedBy
     private String updatedBy;
+
+    @ManyToOne
+    private User useranwser;
+
+    @ManyToOne
+    private Board board;
 }
