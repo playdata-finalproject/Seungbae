@@ -1,7 +1,6 @@
 package com.finalproject.shelter.repository;
 
 import com.finalproject.shelter.ShelterApplicationTests;
-import com.finalproject.shelter.model.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
