@@ -1,4 +1,4 @@
-package com.finalproject.shelter.controller.pageControllerTest;
+package com.finalproject.shelter.controller.pageTest;
 
 import com.finalproject.shelter.ShelterApplicationTests;
 import org.junit.jupiter.api.Test;
@@ -13,19 +13,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @AutoConfigureMockMvc
-public class LoginPageControllerTest extends ShelterApplicationTests {
+public class BoardPageControllerTest extends ShelterApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;
 
     @Test
-    public void loginpage() throws Exception{
-        check("/login","/pages/login");
+    public void listPageTest() throws Exception{
+        check("/board","/pages/list");
     }
 
     @Test
-    public void joinpage() throws Exception{
-        check("/login/join","/pages/join");
+    public void viewPageTest() throws Exception{
+        check("/board/view","/pages/view");
     }
 
     private ResultActions check(String url, String location) throws Exception{
@@ -36,5 +36,4 @@ public class LoginPageControllerTest extends ShelterApplicationTests {
 
         return result;
     }
-
 }

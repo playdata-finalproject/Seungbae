@@ -1,6 +1,8 @@
 package com.finalproject.shelter.model.entity;
 
 import lombok.*;
+import lombok.experimental.Accessors;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +13,8 @@ import java.util.List;
 @Data
 @Builder
 @ToString(exclude = {"boardList"})
+@Accessors(chain = true)
+@EntityListeners(AuditingEntityListener.class)
 public class Category {
 
     @Id
