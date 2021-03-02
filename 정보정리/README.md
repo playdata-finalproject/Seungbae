@@ -11,3 +11,5 @@
 [AWS로 mysql 연동하는 방법](https://jsb-diary0011.tistory.com/17)
 
 [mysql ERD 방법](https://jsb-diary0011.tistory.com/42)
+
+[ 트래픽 관리 ](https://jsb-diary0011.tistory.com/44)
