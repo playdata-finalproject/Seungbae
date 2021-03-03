@@ -3,7 +3,6 @@ package com.finalproject.shelter.controller.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finalproject.shelter.ShelterApplicationTests;
 import com.finalproject.shelter.model.Header;
-import com.finalproject.shelter.model.network.request.AdminUserApiRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

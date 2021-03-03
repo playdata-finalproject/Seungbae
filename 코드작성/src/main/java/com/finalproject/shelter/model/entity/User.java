@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@ToString(exclude = {"categoryList","answerList"})
+@ToString(exclude = {"boardList"})
 @Accessors(chain = true)
 @EntityListeners(AuditingEntityListener.class)
 public class User {
@@ -27,17 +27,15 @@ public class User {
 
     private Long kakaoId;
 
-    private String userId;
+    private String name;
+
+    private String nickname;
 
     private String password;
-
-    private String name;
 
     private String email;
 
     private LocalDateTime lastLoginAt;
-
-    private int loginFailCount; // integer의 용량 이 int보다 큼 바꿀라면 나중에 바꾸자
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
@@ -50,9 +48,9 @@ public class User {
 
     private LocalDateTime uncreatedAt;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "useranwser")
-    private List<Answer> answerList;
+    @ManyToOne
+    private AdminUser adminUserUser;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "usercategory")
-    private List<Category> categoryList;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "board")
+    private List<Board> boardList;
 }

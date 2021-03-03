@@ -16,21 +16,18 @@ public class CategoryRepositoryTest extends ShelterApplicationTests {
     @Autowired
     private CategoryRepository categoryRepository;
 
-
     @Autowired
     private UserRepository userRepository;
 
     @Test
     public void create(){
-
-        Optional<User> user = userRepository.findById(1L);
+        Optional<User> user = userRepository.findById(2L);
 
         Assertions.assertNotNull(user);
 
         user.ifPresent(select->{
             Category category = Category.builder()
-                    .title("python3")
-                    .usercategory(select)
+                    .title("python4")
                     .build();
             Category newcategory = categoryRepository.save(category);
         });
