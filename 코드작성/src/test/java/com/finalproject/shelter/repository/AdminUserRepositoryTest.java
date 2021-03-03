@@ -2,6 +2,7 @@ package com.finalproject.shelter.repository;
 
 
 import com.finalproject.shelter.ShelterApplicationTests;
+import com.finalproject.shelter.model.entity.AdminUser;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,10 @@ public class AdminUserRepositoryTest extends ShelterApplicationTests {
     @Test
     public void create(){
         AdminUser adminUser = new AdminUser();
-        adminUser.setName("길");
+        adminUser.setName("wqkhdk");
         adminUser.setCreatedAt(LocalDateTime.now());
-        adminUser.setUserId("aaa123");
-        adminUser.setPassword("1234");
+        adminUser.setNickname("wfjklwefw");
+        adminUser.setPassword("4234242");
 
         AdminUser newadminuser = adminUserRepository.save(adminUser);
         Assertions.assertNotNull(newadminuser);

@@ -1,6 +1,7 @@
 package com.finalproject.shelter.repository;
 
 import com.finalproject.shelter.ShelterApplicationTests;
+import com.finalproject.shelter.model.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UserRepositoryTest extends ShelterApplicationTests {
     public void create(){
 
         User user = User.builder()
-                .userId("qwer12")
+                .nickname("qwer")
                 .password("1234")
                 .name("바보")
                 .createdAt(LocalDateTime.now())

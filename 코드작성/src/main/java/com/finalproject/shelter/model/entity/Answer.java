@@ -26,21 +26,24 @@ public class Answer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String nickname;
+
     private String answerText;
 
-    @CreatedDate
-    private LocalDateTime createdAt;
+    private int goodAnswer;
 
-    private LocalDateTime uncreatedAt;
+    private int hateAnswer;
+
+    @CreatedDate
+    private LocalDateTime registeredAt;
+
+    private LocalDateTime unregisteredAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
     @LastModifiedBy
     private String updatedBy;
-
-    @ManyToOne
-    private User useranwser;
 
     @ManyToOne
     private Board board;

@@ -5,6 +5,7 @@ import lombok.experimental.Accessors;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -23,9 +24,20 @@ public class Category {
 
     private String title;
 
-    @ManyToOne
-    private User usercategory;
+    private LocalDateTime updatedAt;
+
+    private String updatedBy;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime uncreatedAt;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "category")
     private List<Board> boardList;
+
+    @ManyToOne
+    private AdminUser adminUserCategory;
+
+    @ManyToOne
+    private Categorytable categorytable;
 }

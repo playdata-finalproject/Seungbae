@@ -27,14 +27,20 @@ public class Board {
 
     private String title;
 
-    private String name;
+    private String nickname;
 
     private String contents;
 
-    @CreatedDate
-    private LocalDateTime createdAt;
+    private int view;
 
-    private LocalDateTime uncreatedAt;
+    private int goodBoard;
+
+    private int hateBoard;
+
+    @CreatedDate
+    private LocalDateTime registeredAt;
+
+    private LocalDateTime unregisteredAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
@@ -44,6 +50,9 @@ public class Board {
 
     @ManyToOne
     private Category category;
+
+    @ManyToOne
+    private User user;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "board")
     private List<Answer> answerList;
