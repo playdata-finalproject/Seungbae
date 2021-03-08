@@ -1,7 +1,9 @@
 package com.finalproject.shelter.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -9,6 +11,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,11 +30,15 @@ public class User {
 
     private Long kakaoId;
 
-    private String name;
+    private String username;
 
     private String nickname;
 
+    private String identity;
+
     private String password;
+
+    private byte enabled;
 
     private String email;
 
@@ -49,8 +56,9 @@ public class User {
     private LocalDateTime uncreatedAt;
 
     @ManyToOne
-    private AdminUser adminUserUser;
+    private AdminUser adminUser;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "board")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
+    @JsonIgnore
     private List<Board> boardList;
 }

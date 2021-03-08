@@ -20,7 +20,7 @@ public class UserRepositoryTest extends ShelterApplicationTests {
         User user = User.builder()
                 .nickname("qwer")
                 .password("1234")
-                .name("바보")
+                .username("바보")
                 .createdAt(LocalDateTime.now())
                 .build();
 

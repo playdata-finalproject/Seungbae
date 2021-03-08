@@ -3,6 +3,7 @@ package com.finalproject.shelter.controller.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.finalproject.shelter.ShelterApplicationTests;
 import com.finalproject.shelter.model.Header;
+import com.finalproject.shelter.model.network.request.AdminUserApiRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -37,7 +38,7 @@ public class AdminUserApiControllerTest extends ShelterApplicationTests {
     public void PostTest() throws Exception{
 
         AdminUserApiRequest adminUserApiRequest = AdminUserApiRequest.builder()
-                .userId("오이오이")
+                .nickname("오이오이")
                 .password("34324")
                 .name("김두식")
                 .build();
@@ -56,7 +57,7 @@ public class AdminUserApiControllerTest extends ShelterApplicationTests {
 
         AdminUserApiRequest adminUserApiRequest = AdminUserApiRequest.builder()
                 .id(9L)
-                .userId("오이오이")
+                .nickname("오이오이")
                 .password("1231234")
                 .name("김두식")
                 .build();

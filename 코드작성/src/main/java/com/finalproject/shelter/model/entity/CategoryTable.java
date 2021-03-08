@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(exclude = "categoryList")
-public class Categorytable {
+public class CategoryTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +21,6 @@ public class Categorytable {
 
     private String title;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "categorytable")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "categoryTable")
     private List<Category> categoryList;
 }
