@@ -1,11 +1,12 @@
 package com.finalproject.shelter.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import lombok.experimental.Accessors;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,6 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString(exclude = "categoryList")
+@Builder
+@Accessors(chain = true)
+@EntityListeners(AuditingEntityListener.class)
 public class Categorytable {
 
     @Id
@@ -22,5 +26,6 @@ public class Categorytable {
     private String title;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "categorytable")
+    @JsonIgnore
     private List<Category> categoryList;
 }

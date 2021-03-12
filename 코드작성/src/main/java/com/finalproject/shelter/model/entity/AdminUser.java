@@ -1,5 +1,6 @@
 package com.finalproject.shelter.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.CreatedDate;
@@ -8,7 +9,9 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,26 +30,28 @@ public class AdminUser {
 
     private String name;
 
-    private String nickname;
-
     private String password;
+
+    private String nickname;
 
     private LocalDateTime lastLoginAt;
 
     @CreatedDate
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
-    private LocalDateTime uncreatedAt;
+    private LocalDate uncreatedAt;
 
     @LastModifiedDate
-    private LocalDateTime updatedAt;
+    private LocalDate updatedAt;
 
     @LastModifiedBy
     private String updatedBy;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "adminUserCategory")
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "adminUser")
+    @JsonIgnore
     private List<Category> categoryList;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "adminUserUser")
-    private List<User> userList;
+    //@OneToMany(fetch = FetchType.LAZY,mappedBy = "adminUser")
+    //@JsonIgnore
+    //private List<User> userList;
 }

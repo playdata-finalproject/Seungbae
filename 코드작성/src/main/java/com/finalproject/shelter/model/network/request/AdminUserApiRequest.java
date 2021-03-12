@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -23,11 +24,11 @@ public class AdminUserApiRequest {
 
     private LocalDateTime lastLoginAt;
 
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
 
-    private LocalDateTime uncreatedAt;
+    private LocalDate uncreatedAt;
 
-    private LocalDateTime updatedAt;
+    private LocalDate updatedAt;
 
     private String updatedBy;
 
